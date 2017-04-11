@@ -22,14 +22,14 @@ class AppKernel extends Kernel
     }
 
     /**
-     * @param ContainerBuilder $containerBuilder
+     * @param ContainerBuilder $c
      * @param LoaderInterface  $loader
      */
     protected function configureContainer(
         ContainerBuilder $c,
         LoaderInterface $loader
     ) {
-        $loader->load(__DIR__.'/config/config.yml');
+        $loader->load(__DIR__ . '/config/config.yml');
     }
 
     /**
@@ -37,6 +37,6 @@ class AppKernel extends Kernel
      */
     protected function configureRoutes(RouteCollectionBuilder $routes)
     {
-        $routes->add('/hello/symfony/{version}', 'App\Controller\MicroController::helloSymfony');
+        $routes->mount('/', $routes->import(__DIR__ . '/config/routing.yml'));
     }
 }

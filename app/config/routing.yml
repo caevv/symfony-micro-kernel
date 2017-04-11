@@ -1,0 +1,3 @@
+hello:
+    path:      /hello/symfony/{version}
+    defaults:  { _controller: App\Controller\MicroController::helloSymfony }
