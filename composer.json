@@ -1,0 +1,10 @@
+{
+    "require": {
+        "symfony/symfony": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
